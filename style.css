@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    background-color: #000;
+}
+
+.container{
+    margin-bottom: 5rem;
+}
+
+ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+ul{
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.list-items-1 li a{
+    position: relative;
+    transition: all .4s;
+    padding: 22px;
+}
+
+.list-items-1 li a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #ff6a00, #ee0979, #9c27b0, #00c3ff);
+    height: 2px;
+    width: 100%;
+    transform-origin: left;
+    transition: all .4s;
+    transform: scaleX(0);
+}
+
+.list-items-1 li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #ff6a00, #ee0979, #9c27b0, #00c3ff);
+    height: 2px;
+    width: 100%;
+    transition: all .4s;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.list-items-1 li a:hover::after, .list-items-1 li a:hover::before{
+    transform: scaleX(1);
+}
+
+.list-items-1 li a:hover{
+    background: linear-gradient(rgba(38, 8, 207, 0.301),rgba(73, 73, 15, 0.589));
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 4px 4px 8px rgb(127, 182, 196);
+}
+
+
+/* LIST_ITEMS@2 */
+.list-items-2 li a{
+    padding: 22px;
+    position: relative;
+    transition: all .2s ease-in;
+}
+
+.list-items-2 li a::before{
+    position: absolute;
+    content: '';
+    top: -13px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364, #4b6cb7);
+    transition: all .2s;
+    transform-origin: top;
+    opacity: 0;
+}
+
+.list-items-2 li a::after{
+    position: absolute;
+    content: '';
+    bottom: -13px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to left, #0f2027, #203a43, #2c5364, #4b6cb7);
+    transition: all .2s ease-in-out;
+    transform-origin: bottom;
+    opacity: 0;
+}
+
+.list-items-2 li a:hover::before{
+    opacity: 1;
+    top: -6px;
+}
+
+.list-items-2 li a:hover::after{
+    bottom: -6px;
+    opacity: 1;
+}
+
+.list-items-2 li a:hover{
+    background: linear-gradient(to left, #051218, #162e36, #020507, #4b6bb763);
+    color: #aacbe6de;
+}
+
+
+/* LIST_ITEMS_3 */
+
+.list-items-3 li a{
+    padding: 22px;
+    position: relative;
+}
+
+.list-items-3 li a::before{
+    position: absolute;
+    content: '';
+    top:-16px;
+    left: -16px;
+    background: #ffffff02;
+    height: 30%;
+    width: 30%;
+    border-color: white;
+    border-width: 5px 0px 0px 5px;
+    border-style: solid;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+.list-items-3 li a::after{
+    position: absolute;
+    content: '';
+    bottom:-16px;
+    right: -16px;
+    background: #ffffff02;
+    height: 30%;
+    width: 30%;
+    border-color: white;
+    border-width: 0px 5px 5px 0px;
+    border-style: solid;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+.list-items-3 li a:hover:before{
+    top: -2px;
+    left: -2px;
+    animation: visibiling .4s ease-in-out ;
+    opacity: 1;
+
+}
+
+.list-items-3 li a:hover::after{
+    opacity: 1;
+    bottom: -2px;
+    right: -2px;
+    animation: visibiling .4s ease-in-out ;
+}
+
+@keyframes visibiling {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0.4;
+    }
+    70%{
+        opacity: .7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
